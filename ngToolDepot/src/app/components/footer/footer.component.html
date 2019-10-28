@@ -1,0 +1,95 @@
+<footer id="footer" class="footer-1">
+  <div class="main-footer widgets-dark typo-light">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="widget subscribe no-box">
+            <h5 class="widget-title">Tool Depot<span></span></h5>
+            <p>Enabling average Joe or Jane to accomplish weekend project without buying every tool. </p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="widget no-box">
+            <h5 class="widget-title">Quick Links<span></span></h5>
+            <ul class="thumbnail-widget">
+              <li>
+                <div class="thumb-content"><a href="foot-link" [routerLink]="['/home']">Home</a></div>
+              </li>
+              <li>
+                <div class="thumb-content"><a href="foot-link" [routerLink]="['/tool']">Tools</a></div>
+              </li>
+              <li>
+                <div class="thumb-content"><a href="#.">About</a></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="widget no-box">
+            <h5 class="widget-title">Get Started<span></span></h5>
+            <a class="btn" *ngIf="!checkIfLoggedInUser()" (click)="registerModal.show()">Register Now</a>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+
+          <div class="widget no-box">
+            <h5 class="widget-title">Contact Us<span></span></h5>
+
+            <p><a href="mailto:info@domain.com" title="glorythemes">tooldepot@tooldepot.com</a></p>
+            <ul class="social-footer2">
+              <a type="button" mdbBtn floating="true" size="md" class=" waves-light" mdbWavesEffect href="https://github.com/jdebroux/FinalProject">
+                <mdb-icon fab icon="github"></mdb-icon>
+              </a>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>Copyright Tool Depot © 2019. All rights reserved, but no lawyers to back the claim.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div mdbModal #registerModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+    aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="registerModal.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Register </h4>
+        </div>
+        <div id="regForm" class="modal-body">
+          <form #newAccount="ngForm">
+              <div class="input-group">
+                  <input class="form-control" type="text" name="firstName" ngModel placeholder="First Name">
+                  <input class="form-control" type="text" name="lastName" ngModel placeholder="Last Name">
+                </div>
+            <br>
+            <input class='form-control' type="text" name="username" ngModel placeholder="Username">
+            <br>
+            <input class='form-control' type="password" name="password" ngModel placeholder="Password">
+            <br>
+            <input class='form-control' type="email" name="email" ngModel placeholder="Email">
+            <br>
+            <br>
+            <button type="button" class="btn modalbtn" (click)="register(newAccount);registerModal.hide();" mdbRippleRadius>Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

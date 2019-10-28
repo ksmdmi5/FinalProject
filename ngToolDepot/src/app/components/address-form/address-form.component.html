@@ -1,0 +1,26 @@
+<div *ngIf="!hasAddress" class="md-form amber-textarea active-amber-textarea">
+  <textarea class="md-textarea mb-1 form-control" placeholder="Street" rows="1" [(ngModel)]="address.street"></textarea>
+  <textarea class="md-textarea mb-1 form-control" placeholder="City" rows="1" [(ngModel)]="address.city"></textarea>
+  <textarea class="md-textarea mb-1 form-control" placeholder="Zip Code" rows="1" [(ngModel)]="address.zip"></textarea>
+  <mat-form-field>
+      <mat-label>State</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let state of states">
+          {{state}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+<div *ngIf="hasAddress" class="md-form amber-textarea active-amber-textarea">
+  <textarea class="md-textarea mb-1 form-control" placeholder="{{address.street}}" rows="1" [(ngModel)]="address.street"></textarea>
+  <textarea class="md-textarea mb-1 form-control" placeholder="{{address.city}}" rows="1" [(ngModel)]="address.city"></textarea>
+  <textarea class="md-textarea mb-1 form-control" placeholder="{{address.zip}}" rows="1" [(ngModel)]="address.zip"></textarea>
+  <mat-form-field>
+      <mat-label>State</mat-label>
+      <select>
+        <option *ngFor="let state of states">
+          {{state}}
+        </option>
+      </select>
+    </mat-form-field>
+</div>

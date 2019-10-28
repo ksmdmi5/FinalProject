@@ -1,0 +1,15 @@
+
+agm-map {
+  height: 300px;
+  width: 100%;
+}
+ .row {
+   height: 100%;
+   width:100%;
+ }
+
+ thead {
+   background-color: #DFA000;
+ }
+
+

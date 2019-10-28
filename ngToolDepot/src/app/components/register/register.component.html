@@ -1,0 +1,80 @@
+<!-- <div class="row">
+  <div class ="<col-xs-12 col-sm-12 col-md-12">
+    <form #newAccount="ngForm">
+      <label for="email">Email: </label>
+      <input type="email" name="email" ngModel>
+      <br>
+      <label for="username">Username: </label>
+      <input type="text" name="username" ngModel>
+      <br>
+      <label for="password">Password: </label>
+      <input type="password" name="password" ngModel>
+      <br>
+      <button class="btn-sm btn-primary" type="submit" (click)="register(newAccount)">Register account</button>
+    </form>
+  </div>
+</div> -->
+<!--
+  <mat-grid-list cols="1" rowHeight="2:1">
+    <mat-grid-tile class="register">
+      <div class="register">
+      <div id="regForm">
+      <form #newAccount="ngForm">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="fa fa-at"></i></span>
+                </div>
+                <input type="text" name="username" ngModel  placeholder="Username" aria-label="Username " aria-describedby="basic-addon1">
+              </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye"></i></span>
+                </div>
+                <input type="password" name="password" ngModel  placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+              </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                </div>
+                <input type="email" name="email" ngModel placeholder="Email" aria-label="Email " aria-describedby="basic-addon1">
+              </div>
+            <div class="input-group mb-3">
+                <a><button type=" " (click)="register(newAccount)" class="btn">Register Account</button></a>
+            </div>
+        </form>
+      </div>
+    </div>
+    </mat-grid-tile>
+  </mat-grid-list> -->
+
+  <!-- <button type="button" class="btn" (click)="basicModal.show()" mdbRippleRadius>Register Account</button>
+
+  <div mdbModal #basicModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+    aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Register </h4>
+        </div>
+        <div id="regForm" class="modal-body">
+          <form #newAccount="ngForm">
+            <input class='form-control' type="text" name="username" ngModel placeholder="Username">
+            <br>
+            <input class='form-control' type="password" name="password" ngModel placeholder="Password">
+            <br>
+            <input class='form-control' type="email" name="email" ngModel placeholder="Email">
+            <br>
+            <br>
+            <button type="button" class="btn" (click)="register(newAccount);basicModal.hide();" mdbRippleRadius>Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+

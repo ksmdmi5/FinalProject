@@ -1,0 +1,60 @@
+<div class="homeBkgd" layout="row" layout-xs="column">
+  <mat-grid-list cols="2" rowHeight="3.5:1">
+    <mat-grid-tile>
+      <form class="form-inline">
+        <h3 style="font-size:3vw;">Find A Tool</h3>
+        <input style="font-size:1vw;" class="form-control form-control-sm mr-3 w-75" name="searchTerm" type="text" placeholder="Search" [(ngModel)]="searchTerm" aria-label="Search">
+        <a (click)="search();searched=true;"><i id="searchIcon" style="font-size:1vw;" class="fas fa-search" aria-hidden="true"></i></a>
+      </form>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <form *ngIf="!checkLoggedInUser()">
+        <div class="mr-3 w-100">
+          <h3 style="font-size:3vw;">Lend A Tool</h3>
+          <a><button (click)="registerModal.show()" style="font-size:1vw;" type="button" class="btn btn-sm mr-3 w-100 signUp" >Sign Up</button></a>
+        </div>
+      </form>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<div *ngIf="!searched">
+  <mat-grid-list cols="1" rowHeight="2:1">
+    <mat-grid-tile class="seeAll">
+      <!-- <img src="assets/cover_tools.jpg" alt="Card image cap"> -->
+      <a><button type="button" class="btn seeAllTools" [routerLink]="['/tool']"
+          routerLinkActive="router-link-active">See All Tools</button></a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<app-search-results *ngIf="searched" [searchResults]="searchResults"></app-search-results>
+
+<div mdbModal #registerModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+    aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="registerModal.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Register </h4>
+        </div>
+        <div id="regForm" class="modal-body">
+          <form #newAccount="ngForm">
+              <div class="input-group">
+                  <input class="form-control" type="text" name="firstName" ngModel placeholder="First Name">
+                  <input class="form-control" type="text" name="lastName" ngModel placeholder="Last Name">
+                </div>
+            <br>
+            <input class='form-control' type="text" name="username" ngModel placeholder="Username">
+            <br>
+            <input class='form-control' type="password" name="password" ngModel placeholder="Password">
+            <br>
+            <input class='form-control' type="email" name="email" ngModel placeholder="Email">
+            <br>
+            <br>
+            <button type="button" class="btn" (click)="register(newAccount);registerModal.hide();" mdbRippleRadius>Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

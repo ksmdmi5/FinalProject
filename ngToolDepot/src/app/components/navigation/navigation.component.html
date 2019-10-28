@@ -1,0 +1,102 @@
+<div class="navbar sticky-top">
+<div id="navbar-container" style="width: 100%;">
+
+  <mdb-navbar id="navbar" SideClass="navbar navbar-expand-lg navbar-dark">
+  <!-- <mdb-navbar id="navbar" SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"> -->
+
+    <mdb-navbar-brand>
+      <a class="navbar-brand" href="#">
+        Tool Depot
+      </a>
+
+    </mdb-navbar-brand>
+
+    <links class="nav-links">
+      <ul class="navbar-nav justify-content-start">
+        <li class="nav-item">
+          <a class="nav-link waves-light" [routerLink]="['/home']" routerLinkActive="router-link-active"
+            mdbWavesEffect><span>Home</span></a>
+          </li>
+        <li>
+            <a class="nav-link waves-light" [routerLink]="['/tool']"
+              routerLinkActive="router-link-active"See All Tools><span>See All Tools</span></a>
+        </li>
+        <li *ngIf="!checkIfLoggedInUser()">
+          <a class="nav-link waves-light " mdbWavesEffect (click)="registerModal.show()"><span>Register</span></a>
+        </li>
+        <li *ngIf="checkIfLoggedInUser()">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/user']">{{getUserFName()}}</a>
+        </li>
+
+        <li *ngIf="!checkIfLoggedInUser()">
+            <a class="nav-link waves-light " mdbWavesEffect (click)="loginModal.show()"><span>Login</span></a>
+          </li>
+
+        <ul *ngIf="checkIfLoggedInUser()" class="navbar-nav ml-auto"></ul>
+        <ul class="navbar-nav ml-auto" >
+          <li *ngIf="checkIfLoggedInUser()">
+            <app-logout></app-logout>
+          </li>
+        </ul>
+
+      </ul>
+    </links>
+  </mdb-navbar>
+
+</div>
+</div>
+<div mdbModal #registerModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+    aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="registerModal.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Register </h4>
+        </div>
+        <div id="regForm" class="modal-body">
+          <form #newAccount="ngForm">
+              <div class="input-group">
+                  <input class="form-control" type="text" name="firstName" ngModel placeholder="First Name">
+                  <input class="form-control" type="text" name="lastName" ngModel placeholder="Last Name">
+                </div>
+            <br>
+            <input class='form-control' type="text" name="username" ngModel placeholder="Username">
+            <br>
+            <input class='form-control' type="password" name="password" ngModel placeholder="Password">
+            <br>
+            <input class='form-control' type="email" name="email" ngModel placeholder="Email">
+            <br>
+            <br>
+            <button type="button" class="btn" (click)="register(newAccount);registerModal.hide();" mdbRippleRadius>Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div mdbModal #loginModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+    aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="loginModal.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Login</h4>
+        </div>
+        <div id="regForm" class="modal-body">
+          <form #loginUser="ngForm">
+            <input class='form-control' type="text" name="username" ngModel placeholder="Username">
+            <br>
+            <input class='form-control' type="password" name="password" ngModel placeholder="Password">
+            <br>
+            <br>
+            <button type="button" class="btn" (click)="login(loginUser);loginModal.hide();" mdbRippleRadius>Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

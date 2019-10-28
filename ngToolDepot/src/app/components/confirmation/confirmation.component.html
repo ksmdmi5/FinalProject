@@ -1,0 +1,26 @@
+<div class="confirmation-page">
+    <div class="row justify-content-center">
+        <div class="col-sm-12">
+            <div class="card">
+          <h3 class="card-header text-dark bg-dark">
+            <span class="confirm">Rental Request Sent</span>
+          </h3>
+          <div var="image">
+              <img class="img-thumbnail card-img-top" [src]="display.tool.photos[0].photoUrl">
+            </div>
+            <div class="card-horizontal">
+              <div class="card-body">
+                <div class="card-text">
+                  <p>{{display.tool.name}}</p>
+                  <p>Expected Cost: {{display.totalCost | currency}}</p>
+                  <p>The Lender will get back with you.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer text-dark bg-warning">
+              <span></span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+form{
+  color: #dfa000;
+  background-color: #646264;
+  padding: 10px;
+}
+
+mat-grid-list {
+  background-color: #646264;
+  align-content: center;
+}
+.btn {
+  background-color: #dfa000;
+  color:#f2ebe4;
+  width: 100%;
+}
+.btn:hover, .btn:focus, .btn.active {
+  background: #F9d31a;
+  color: #646264;
+}

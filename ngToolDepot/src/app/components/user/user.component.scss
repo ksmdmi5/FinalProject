@@ -1,0 +1,70 @@
+// .userpage {
+//   background-color: #646264;
+//   // display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin: 0px;
+//   padding: 0px;
+//   // padding-top: 10px;
+//   width: 100%;
+// }
+.register:hover {
+  background-color:#36b051;
+  color:#fff;
+  }
+
+  .card-horizontal {
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  .btn.collapse{
+    background-color: #3D3B3D;
+    color: #DFA000;
+    font-weight: bold;
+  }
+  .body {
+    width: 100%;
+  }
+  span {
+    color: #3D3B3D;
+    font-weight: bold;
+  }
+  .btn-form {
+    display: block;
+    width: 100%;
+    background-color: #DFA000;
+    color: #3D3B3D;
+    font-weight: bold;
+  }
+
+
+
+  .userUploadedPic {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+
+  .updateMiddle {
+    transition: .5s ease;
+    opacity: 0;
+    float: left;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    padding-left: 50px;
+  }
+
+  .imagecontainer:hover .userUploadedPic {
+    opacity: 0.3;
+  }
+
+  .imagecontainer:hover .updateMiddle {
+    opacity: 1;
+  }

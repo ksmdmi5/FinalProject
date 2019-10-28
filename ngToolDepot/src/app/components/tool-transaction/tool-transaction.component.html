@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-fluid">
+        <div class="card">
+          <h3 class="card-header text-dark bg-warning">
+            <span class="tool-name">{{displayTool.name}}&nbsp;&nbsp;</span>
+            <span class="stars">
+              <!-- <star-rating value="5" checkedcolor="yellow"
+                uncheckedcolor="black" size="flex" readonly="true"></star-rating> -->
+            </span>
+            <span class="cost">{{displayTool.costPerDay | currency}}/day</span></h3>
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <img class="" [src]="displayTool.photos[0].photoUrl" class="" alt="Cinque Terre" width="250" height="250"
+                alt="Card image cap" />
+            </div>
+            <div class="card-body">
+              <h3><span class="condition">{{displayTool.condition}} Condition</span>
+                <span class="year-made">Year Manufactured: {{displayTool.manufactureYear}}</span></h3><br>
+              <p class="card-text ">
+                {{displayTool.description}}
+              </p>
+            </div>
+          </div>
+          <div class="card-footer text-dark bg-warning">
+            <span class="owner">Lender: {{displayTool.user.username}}&nbsp;&nbsp;</span>
+            <span class="stars">
+              <!-- <star-rating value="4" checkedcolor="yellow"
+                uncheckedcolor="black" size="flex" readonly="true"></star-rating> -->
+            </span>
+            <span style="float: right;">
+              <app-add-tool-rental *ngIf="displayTool.available" [tool]="displayTool"></app-add-tool-rental>
+            </span>
+            <!-- (rate)="onRate($event)" -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="listToolRentals" *ngFor="let rental of listOfToolRentalsContainingTool">
+      <div class="row">
+        <div class="col-fluid">
+          <div class="card" *ngIf="rental.renterReview.toolReview !== null || rental.renterReview.lenderReview !== null">
+            <h3 class="card-header text-dark bg-dark">
+              <span class="reviewer-name">{{rental.renter.firstName}}'s Review</span>
+            </h3>
+            <div class="card-horizontal">
+              <div class="card-body" >
+                <div class="card-text">
+                  <p>Tool Review:</p>
+                  <star-rating value="{{rental.renterReview.toolRating}}" checkedcolor="yellow"
+                uncheckedcolor="black" size="flex" readonly="true"></star-rating>
+                  <p>{{rental.renterReview.toolReview}}</p>
+                  <p>Lender Review:</p>
+                  <star-rating value="{{rental.renterReview.lenderRating}}" checkedcolor="yellow"
+                uncheckedcolor="black" size="flex" readonly="true"></star-rating>
+                  <p>{{rental.renterReview.lenderReview}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer text-dark bg-warning">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,71 @@
+button.btn {
+  background-color: #dfa000;
+  color: #f2ebe4;
+}
+button.close {
+  background-color: #dfa000;
+  color: #f2ebe4;
+}
+button:hover {
+  color: #F9d31a;
+  color: #646264;
+}
+.toolpage {
+  background-color: #646264;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 10px;
+
+}
+.accordion {
+  background-color: #646264;
+
+}
+a:hover {
+  color: #F9d31a;
+}
+a {
+  color:  #dfa000;
+}
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.display-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+.card-header {
+  background-color: #3D3B3D;
+}
+.card-body {
+  background-color: #f2ebe4;
+  color: #3D3B3D;
+  font-weight: bold;
+}
+.card-footer {
+  background-color: #dfa000;
+}
+.footer {
+  color: #f2ebe4 !important;
+}
+.footer:hover {
+  color: #646264 !important;
+}
+.card {
+  border-color: #3D3B3D;
+}
+
+#toolName {
+  color: lightgray;
+}
+
+#toolName:hover {
+  color: darkgrey;
+}
+
+
+

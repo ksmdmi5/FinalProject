@@ -1,0 +1,50 @@
+
+mat-grid-list {
+  background: #646264;
+}
+
+.btn.signUp {
+  background-color: #DFA000;
+  margin-top: 0px;
+}
+
+.seeAll {
+  background-image: url('/assets/cover_tools.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.btn.seeAllTools {
+  background-color: #3D3B3D;
+  color: #DFA000;
+  font-weight: bold;
+}
+
+a {
+  color: #dfa000;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #F9d31a;
+  font-weight: bold;
+}
+
+#searchIcon:hover {
+  color: darkgray;
+}
+.btn {
+  display: block;
+  width: 100%;
+  background-color: #DFA000;
+  color: #3D3B3D;
+  font-weight: bold;
+}
+
+.modal-header {
+  background-color: #646264;
+  color: #DFA000;
+}
+
+.modal-body {
+  background-color: #F2EBE4;
+}

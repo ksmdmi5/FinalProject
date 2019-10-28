@@ -1,0 +1,43 @@
+<div class="adminBkgd">
+  <table class='table table-striped'>
+    <thead class='thead thead-dark'>
+      <tr>
+        <td align='left'>First Name</td>
+        <td align='left'>Last Name</td>
+        <td align='left'>Username</td>
+        <td align='left'>Email</td>
+        <td align='left'>Phone</td>
+        <td align='left'>Create Date</td>
+        <td align='left'>Update Date</td>
+        <td align='left'>Role</td>
+        <td align='left'>Enabled</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of allUsers">
+        <!-- add photo here -->
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email | currency }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.createDate }}</td>
+        <td>{{ user.updateDate }}</td>
+        <td>{{ user.role }}</td>
+        <td>{{ user.enabled }}</td>
+
+        <app-update-user [user]="user"></app-update-user>
+        <app-delete-user [user]="user"></app-delete-user>
+
+
+
+
+        <!-- <td><button *ngIf="loggedIn" (click)="displayTool(tool.id)"
+            class='btn btn-sm btn-outline-secondary'>Rent</button></td>
+        <td><button *ngIf="!loggedIn" (click)="displayRegister()" class='btn btn-sm btn-outline-secondary'>Sign
+            In</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+
+</div>

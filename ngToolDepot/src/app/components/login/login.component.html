@@ -1,0 +1,25 @@
+
+<mat-grid-list cols="1" rowHeight="3:1">
+  <mat-grid-tile class="login">
+    <div class="login">
+    <div id="loginForm">
+      <form #loginForm="ngForm">
+        <input class='form-control' type="text" name="username" placeholder="Username" ngModel>
+        <br>
+        <input class='form-control' type="password" name="password" placeholder='password' ngModel >
+        <br>
+        <button style='float-middle'class="btn" type="submit" (click)="login(loginForm)" >Login</button>
+        <br>
+        <script>
+            document.getElementById('name').addEventListener('keypress', function(event) {
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                }
+            });
+        </script>
+        <button class="btn" type="button"[routerLink]="['/register']" routerLinkActive="router-link-active">New? Sign up!</button>
+      </form>
+    </div>
+  </div>
+  </mat-grid-tile>
+</mat-grid-list>

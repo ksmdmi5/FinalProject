@@ -1,0 +1,39 @@
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
+span {
+  color: #3D3B3D;
+  font-weight: bold;
+}
+span.tool-name {
+  float: left;
+}
+.stars {
+  float: left;
+  vertical-align: top;
+}
+.cost {
+  float: right;
+}
+.year-made {
+  float: right;
+}
+.owner {
+  float: left;
+}
+.reviewer-name {
+  color: #dfa000;
+}
+
+.col-fluid {
+  width: 100%;
+}
+
+.card-body {
+  background-color: rgb(52, 52, 52);
+}
+
+.card-text, .condition, .year-made {
+  color: white;
+}

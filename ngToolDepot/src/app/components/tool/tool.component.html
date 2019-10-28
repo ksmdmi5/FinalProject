@@ -1,0 +1,23 @@
+<div class="toolpage row display-flex col-sm-12" id="listTools" *ngIf="!selected">
+  <div class="card-deck col-lg-4 mb-3 h-100 " *ngFor="let tool of tools">
+    <div class="card text-center flex-fill ">
+      <h4 class="card-header"><a id="toolName" (click)=redirect(tool)>{{tool.name}}
+      </a></h4>
+        <div class="card-body mt-auto display-flex flex-column  text-center">
+          <div var="image">
+          <div>
+            <img class="img-thumbnail card-img-top img-responsive" [src]="tool.photos[0].photoUrl">
+          </div>
+          <p class="card-text">{{tool.type}}</p>
+          <p class="card-text">{{tool.condition}} Condition &nbsp;&nbsp;{{tool.costPerDay | currency}}/day</p>
+          <p></p>
+        </div>
+        <h5><div class="card-footer mt-auto">
+          <p class='footer'><strong>{{tool.available | toolAvailable}}</strong></p>
+        </div></h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-add-tool></app-add-tool> -->
